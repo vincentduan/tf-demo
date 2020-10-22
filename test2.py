@@ -60,5 +60,7 @@ class Perceptron(object):
         """
         z = W0*1 + W1*X1 + W2*X2+ ...+ Wn*Xn
         """
-        return np.dot(X, self.w_[1:]) + self.w_[0]    
-        
+        return np.dot(X, self.w_[1:]) + self.w_[0]
+
+    def predict(self, X):
+        return np.where(self.net_input(X) >= 0.0 , 1, -1)
