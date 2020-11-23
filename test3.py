@@ -1,4 +1,7 @@
 import pandas as pd
+import numpy as np
 
-file="C:/Users/vincent/Desktop/iris.csv"
+file="./iris.csv"
 df = pd.read_csv(file, header=None)
+#print(df.head(20))
+print(np.zeros)

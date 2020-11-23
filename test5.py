@@ -3,6 +3,7 @@ import numpy as np
 
 def plot_desision_regions(X, y, classifier, resolution=0.02):
     marker = ('s', 'x', 'o', 'v')
+    # 根据y中不同类别,分配不同的颜色
     colors = ('red', 'blue', 'lightgreen', 'gray', 'cyan')
     cmap = ListedColormap(colors[:len(np.unique(y))])
 

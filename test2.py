@@ -14,7 +14,7 @@ class Perceptron(object):
     
     def fit(self, X, y):
         """
-        输入训练数据，培训神经元，X表示输入样本, y对应该样本的正确分类
+        输入训练数据，培训神经元，X表示输入样本, y对应样本的正确分类
         X: shape[n_samples, n_features]
         n_samples:表示有多少个训练样本数量
         n_features: 表示有多少个属性
@@ -25,11 +25,14 @@ class Perceptron(object):
 
         """
         首先初始化权重为0
-        加一是因为激活函数w0的阈值
+        加一是因为激活函数w0,也就是阈值,这样就只用判断输出结果是否大于0就可以了
         """
-        self.w_ = np.zero(1 + X.shape[1])
+        self.w_ = np.zeros(1 + X.shape[1])
         self.errors_ = []
 
+        """
+		只要出现错误分类，那么反复训练这个样本，次数是n_iter
+		"""
         for _ in range(self.n_iter): 
             errors = 0
             """
@@ -42,25 +45,39 @@ class Perceptron(object):
                 """
                 update = η * (y-y')
                 """
+                print("target:")
+                print(target)
                 update = self.eta * (target - self.predict(xi))
+                print("update:")
+                print(update)
                 """
-                xi 是一个向量
+                xi 是一个向量, 例如[1,2,3], target表示1
                 update 是一个常量
                 update*xi 等价于 [Δw(1) = X[1]*update, Δw(2) = X[2]*update, Δw(3) = X[3]*update]
                 """
                 # w_[1:]表示w忽略第0个元素，从第一个元素开始往后
                 self.w_[1:] += update * xi
-                self.w_[0] += update
+                self.w_[0] += update * 1
                 errors += int(update != 0.0)
                 self.errors_.append(errors)
             pass
         pass
-            
+    pass
+
     def net_input(self, X):
         """
         z = W0*1 + W1*X1 + W2*X2+ ...+ Wn*Xn
         """
-        return np.dot(X, self.w_[1:]) + self.w_[0]
+        print("net_input:")
+        result = np.dot(X, self.w_[1:]) + self.w_[0]
+        print(result)
+        return result
 
     def predict(self, X):
-        return np.where(self.net_input(X) >= 0.0 , 1, -1)
+        """
+        如果self.net_input(X) >= 0.0返回1, 否则返回-1
+        """
+        result = np.where(self.net_input(X) >= 0.0 , 1, -1)
+        print("predict:")
+        print(result)
+        return result
