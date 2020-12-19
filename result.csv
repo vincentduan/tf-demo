@@ -1,0 +1,6 @@
+,ip,timestamp,desc_info,related_identity,record_num,type,date
+0,103.20.33.156,20190731163218,"{""contact"":{""appid_deputy"":""2192803121""},""contenttype"":""pic"",""self_account"":{""appid"":""1181365872""},""socialtype"":""wechat_recchat""}","{""wechat_id"":""1181365872"",""ip"":""103.20.33.156""}",1,social,20190731
+1,103.20.33.156,20190731120640,"{""contact"":{""appid_deputy"":""918337627""},""contenttype"":""video"",""self_account"":{""appid"":""1181365872""},""socialtype"":""wechat_recchat""}","{""wechat_id"":""1181365872"",""ip"":""103.20.33.156""}",1,social,20190731
+2,103.201.24.8,20190731104410,"{""contact"":{""appid_deputy"":""1430896746""},""self_account"":{""appid"":""1606866680""},""socialtype"":""wechat_recchat""}","{""wechat_id"":""1606866680"",""ip"":""103.201.24.8""}",2,social,20190731
+3,103.220.79.35,20190731135847,"{""contact"":{""appid_deputy"":""1294271732""},""self_account"":{""account"":""wxid_246jp0z16cwp22329"",""appid"":""18997995"",""not_exact_account"":""1""},""socialtype"":""wechat_recchat""}","{""wechat_id"":""18997995"",""ip"":""103.220.79.35""}",1,social,20190731
+4,103.247.161.123,20190731101948,"{""contact"":{""appid_deputy"":""3425730703""},""contenttype"":""pic"",""self_account"":{""appid"":""1527492376""},""socialtype"":""wechat_recchat""}","{""wechat_id"":""1527492376"",""ip"":""103.247.161.123""}",2,social,20190731
